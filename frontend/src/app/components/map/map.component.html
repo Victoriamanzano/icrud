@@ -1,0 +1,20 @@
+<div #map class="container p-5">
+  <div class="row pb-4">
+    <h5>Map</h5>
+    <div class="col d-flex inline pt-2 border-bottom">
+      <div class="form-check pe-3">
+        <input class="form-check-input" type="checkbox" (change)="toggleCategory('Info Point')" [checked]="selectedCategories.includes('Info Point')">
+        <label class="form-check-label">Info Point</label>
+      </div>
+      <div class="form-check pe-3">
+        <input class="form-check-input" type="checkbox" (change)="toggleCategory('Restaurant')" [checked]="selectedCategories.includes('Restaurant')">
+        <label class="form-check-label">Restaurant</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" (change)="toggleCategory('Parking')" [checked]="selectedCategories.includes('Parking')">
+        <label class="form-check-label">Parking</label>
+      </div>
+    </div>
+  </div>
+  <div id="map" style="height: 400px;"></div>
+</div>

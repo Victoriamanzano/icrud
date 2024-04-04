@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const map_1 = require("../controllers/map");
+const routerMap = (0, express_1.Router)();
+routerMap.get('/', map_1.getMarkers);
+routerMap.get('/', map_1.getMaps);
+routerMap.get('/:id', map_1.getMap);
+routerMap.delete('/:id', map_1.deleteMap);
+routerMap.post('/', map_1.postMap);
+routerMap.put('/:id', map_1.updateMap);
+exports.default = routerMap;

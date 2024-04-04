@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const calendar_1 = require("./../controllers/calendar");
+const express_1 = require("express");
+const calendar_2 = require("../controllers/calendar");
+const calendar_validations_1 = require("../validations/calendar-validations");
+const validations_1 = require("../validations/validations");
+const routerCalendar = (0, express_1.Router)();
+routerCalendar.get('/', calendar_2.getEvents);
+routerCalendar.get('/:id', calendar_2.getEvent);
+routerCalendar.post('/', calendar_validations_1.calendarValidations, calendar_2.postEvent);
+routerCalendar.delete('/:id', validations_1.idValidations, calendar_1.deleteEvent);
+routerCalendar.post('/', calendar_validations_1.calendarValidations, calendar_2.postEvent);
+routerCalendar.put('/:id', validations_1.idValidations, calendar_validations_1.calendarValidations, calendar_2.updateEvent);
+exports.default = routerCalendar;

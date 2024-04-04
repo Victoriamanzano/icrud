@@ -1,0 +1,35 @@
+body {
+	box-sizing: border-box;
+	min-height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+
+}
+span {
+	--minFontSize: 2rem;
+	--maxFontSize: calc(var(--minFontSize) * 8);
+	--scaler: 10vw;
+	font-family: "Moderat", sans-serif;
+	font-weight: 900;
+	font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+	color: var(--primary);
+	background: url("../../../assets/img/blacksabbath3.jpg");
+	filter: drop-shadow(0.75rem 0 0.75rem rgb(255, 255, 255));
+	background-size: auto 200%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: vmc 8s linear infinite;
+  text-shadow: white;
+	@keyframes vmc {
+		0% {
+			background-position: center 0;
+		}
+		100% {
+			background-position: center 200%;
+		}
+	}
+}
+

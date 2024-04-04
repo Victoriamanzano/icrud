@@ -1,0 +1,56 @@
+<div class="row mt-2">
+  <div class="col-lg-4 offset-lg-4">
+    <div class="card border-primary mb-3" style="max-width: 25rem; height: 700px;">
+      <div class="card-header">{{ operation }} client</div>
+      <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="addClient()">
+          <input formControlName="name" type="text" class="form-control" placeholder="Insert Name">
+          @if (form.get('name')?.hasError('required') && form.get('name')?.touched) {
+          <span>This "Name" field is required!</span>
+          }
+          <input formControlName="surname" type="text" class="form-control mt-2" placeholder="Insert Surnames">
+          @if (form.get('surname')?.hasError('required') && form.get('surname')?.touched) {
+          <span>This "Surname" field is required!</span>
+          }
+          <input formControlName="dni" type="text" class="form-control mt-2" placeholder="Insert Dni">
+          @if (form.get('dni')?.hasError('required') && form.get('dni')?.touched) {
+          <span>This "Dni" field is required!</span>
+          }
+          <input formControlName="birthdate" type="text" class="form-control mt-2" placeholder="Insert Birthdate">
+          @if (form.get('birthdate')?.hasError('required') && form.get('birthdate')?.touched) {
+          <span>This "Birthdate" field is required!</span>
+          }
+          <input formControlName="address" type="text" class="form-control mt-2" placeholder="Insert Address">
+          @if (form.get('address')?.hasError('required') && form.get('address')?.touched) {
+          <span>This "Address" field is required!</span>
+          }
+          <input formControlName="postalcode" type="text" class="form-control mt-2" placeholder="Insert Postalcode">
+          @if (form.get('postalcode')?.hasError('required') && form.get('postalcode')?.touched) {
+          <span>This "Postalcode" field is required!</span>
+          }
+          <input formControlName="email" type="text" class="form-control mt-2" placeholder="Insert Email">
+          @if (form.get('email')?.hasError('required') && form.get('email')?.touched) {
+          <span>This "Email" field is required!</span>
+          }
+          <input formControlName="phone" type="text" class="form-control mt-2" placeholder="Insert phone">
+          @if (form.get('phone')?.hasError('required') && form.get('phone')?.touched) {
+          <span>This "Phone" field is required!</span>
+          }
+          <div class="row mt-3 text-center">
+            <div class="col-lg-6">
+              <button type="button" class="btn btn-outline-dark" [routerLink]="['/clients']">Back</button>
+            </div>
+            <div class="col-lg-6">
+              <button [disabled]="form.invalid" type="submit"  class="btn btn-outline-primary">Accept</button>
+            </div>
+          </div>
+           <div class="row mt-4 text-center">
+            <h4>TATTOO SHOP GEST</h4>
+            <h6>BARCELONA</h6>
+           </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+

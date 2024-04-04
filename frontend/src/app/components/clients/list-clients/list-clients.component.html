@@ -1,0 +1,43 @@
+<div class="container  crudclients">
+  <div class="title">
+   <h5>Lista:</h5>
+   <button type="button" class="btn btn-outline-primary mb-2" routerLink="/add">Add Client +</button>
+ </div>
+  <table class="table table-hover">
+   @if (listClients.length > 0) {
+   <thead>
+     <tr>
+       <td scope="col">Name</td>
+       <td scope="col">Surname</td>
+       <td scope="col">Dni</td>
+       <td scope="col">Birthdate</td>
+       <td scope="col">Address</td>
+       <td scope="col">Postal Code</td>
+       <td scope="col">Email</td>
+       <td scope="col">Phone</td>
+       <td scope="col"></td>
+     </tr>
+   </thead>
+   <tbody>
+@for (client of listClients;track client.id) {
+     <tr class="table-active">
+       <td>{{ client.name}}</td>
+       <td>{{ client.surname }}</td>
+       <td>{{ client.dni }}</td>
+       <td class="birthtext">{{ client.birthdate }}</td>
+       <td>{{ client.address }}</td>
+       <td>{{ client.postalcode }}</td>
+       <td>{{ client.email }}</td>
+       <td>{{ client.phone }}</td>
+       <td class="btns-edit">
+         <button type="button" [routerLink]="'/edit/' + client.id" class="btn btn-outline-primary btn-sm">Edit</button>
+         <button (click)="deleteClients(client.id!)" type="button" class="btn btn-outline-dark btn-sm mt-1 ">Delete</button>
+       </td>
+     </tr> }
+   </tbody>
+ }
+ </table>
+ @if(listClients.length === 0 ) {
+   <h5>Not clients found.</h5>
+ }
+</div>
