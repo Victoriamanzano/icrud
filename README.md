@@ -59,7 +59,7 @@ ng --version
  Clona este repositorio en tu máquina local:
 
 ```
-git clone 
+git clone https://github.com/Victoriamanzano/icrud.git
 ```
  Navega hacia el directorio del backend:
 
